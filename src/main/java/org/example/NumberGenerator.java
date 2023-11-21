@@ -20,6 +20,11 @@ public class NumberGenerator extends Thread implements Supplier<Integer> {
         this.step = step;
     }
 
+    public int getStep() {
+
+        return this.step;
+    }
+
     @Override
     public Integer get() {
 
@@ -46,10 +51,6 @@ public class NumberGenerator extends Thread implements Supplier<Integer> {
                 break;
             }
         }
-    }
-
-    public int getStep() {
-        return this.step;
     }
 }
 
