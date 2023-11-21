@@ -12,7 +12,6 @@ public class NumberGenerator extends Thread implements Supplier<Integer> {
     private final static int GENERATOR_TIME_MIN = 2000;
     public final static int GENERATOR_TIME_MAX = 2500;
 
-    // Constructor to initialize the starting term and common difference
     public NumberGenerator(BlockingDeque<Integer> sharedStack, int initialValue, int step) {
 
         this.sharedStack = sharedStack;
@@ -43,7 +42,7 @@ public class NumberGenerator extends Thread implements Supplier<Integer> {
                 sharedStack.put(term);
                 System.out.println("Thread " + Thread.currentThread().getId() + ": " + term);
                 System.out.println("Shared Queue now contains: " + sharedStack);
-                // Generator generates numbers within random time intervals between TIME_1 and TIME_2
+                // Generator generates numbers within random time intervals between TIME_MIN and TIME_MAX
                 Thread.sleep(ThreadLocalRandom.current().nextInt(GENERATOR_TIME_MIN, GENERATOR_TIME_MAX));
             } catch (InterruptedException e) {
                 System.out.printf("Thread %s was interrupted%n", Thread.currentThread().getName());

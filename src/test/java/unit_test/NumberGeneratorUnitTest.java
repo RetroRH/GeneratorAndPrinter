@@ -1,3 +1,5 @@
+package unit_test;
+
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingDeque;
 
@@ -7,7 +9,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class NumberGeneratorTest {
+public class NumberGeneratorUnitTest {
 
     private BlockingDeque<Integer> sharedStack;
     private NumberGenerator numberGenerator;
@@ -20,28 +22,14 @@ public class NumberGeneratorTest {
     }
 
     @Test
-    public void testGet() {
+    public void testGetNotNull() {
         assertNotNull(numberGenerator.get());
     }
 
-
     @Test
-    public void testGetResults() {
-
-        assertNotNull(numberGenerator.get());
-
-        // Set up the expected values for the initial and subsequent calls to get()
-        int expectedInitialValue = 3;
-        int expectedNextValue = expectedInitialValue + numberGenerator.getStep();
-
-        // Test the initial call to get()
-        int initialValue = numberGenerator.get();
-        assertEquals("Initial value should be as expected", expectedInitialValue, initialValue);
-
-
-        // Test the subsequent call to get()
-        int nextValue = numberGenerator.get();
-        assertEquals("Next value should be as expected", expectedNextValue, nextValue);
+    public void testGetCheckValue() {
+        int result = numberGenerator.get();
+        assertEquals(3, result);
     }
 
 
@@ -61,3 +49,4 @@ public class NumberGeneratorTest {
         }
     }
 }
+

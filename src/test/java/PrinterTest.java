@@ -10,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PrinterTest {
 
-    // Initialize sharedStack as an instance variable
     private BlockingDeque<Integer> sharedStack;
     private NumberGenerator numberGenerator;
     private Printer printer;
@@ -18,7 +17,6 @@ class PrinterTest {
     @BeforeEach
     void setUp() {
         sharedStack = new LinkedBlockingDeque<>(50);
-        // Initialize with an initial value of 0 and a step of 1 for testing
         numberGenerator = new NumberGenerator(sharedStack, 5, 5);
         printer = new Printer(sharedStack);
     }
