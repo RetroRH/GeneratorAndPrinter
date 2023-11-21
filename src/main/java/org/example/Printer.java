@@ -3,11 +3,11 @@ package org.example;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.ThreadLocalRandom;
 
-class Printer extends Thread {
+public class Printer extends Thread {
 
     private final BlockingDeque<Integer> sharedStack;
     private final static int PRINTER_TIME_MIN = 2000;
-    final static int PRINTER_TIME_MAX = 3000;
+    public final static int PRINTER_TIME_MAX = 3000;
 
     public Printer(BlockingDeque<Integer> sharedStack) {
 
