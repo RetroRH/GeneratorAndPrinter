@@ -4,6 +4,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 import org.example.NumberGenerator;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.Assert.*;
 
@@ -28,8 +29,6 @@ public class NumberGeneratorTest {
     @Test
     public void testGetResults() {
 
-        assertNotNull(numberGenerator.get());
-
         // Set up the expected values for the initial and subsequent calls to get()
         int expectedInitialValue = 3;
         int expectedNextValue = expectedInitialValue + numberGenerator.getStep();
@@ -39,7 +38,7 @@ public class NumberGeneratorTest {
         assertEquals("Initial value should be as expected", expectedInitialValue, initialValue);
 
 
-        // Test the subsequent call to get()
+//         Test the subsequent call to get()
         int nextValue = numberGenerator.get();
         assertEquals("Next value should be as expected", expectedNextValue, nextValue);
     }
