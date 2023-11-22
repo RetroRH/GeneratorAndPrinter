@@ -45,7 +45,7 @@ public class NumberGenerator extends Thread implements Supplier<Integer> {
                 // Generator generates numbers within random time intervals between TIME_MIN and TIME_MAX
                 Thread.sleep(ThreadLocalRandom.current().nextInt(GENERATOR_TIME_MIN, GENERATOR_TIME_MAX));
             } catch (InterruptedException e) {
-                System.out.printf("Thread %s was interrupted%n", Thread.currentThread().getName());
+                System.out.printf("Generator thread %s was interrupted%n", Thread.currentThread().getName());
                 Thread.currentThread().interrupt();
                 break;
             }

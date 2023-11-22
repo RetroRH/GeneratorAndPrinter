@@ -25,6 +25,7 @@ public class Printer extends Thread {
                 // Pop the top element from the stack in LIFO order and print it
                 Integer numberToPrint = sharedStack.pollLast();
                 if (numberToPrint != null) {
+//                    System.out.println(numberToPrint);
                     System.out.println("Printer printed: " + numberToPrint);
                 }
             } catch (InterruptedException e) {
